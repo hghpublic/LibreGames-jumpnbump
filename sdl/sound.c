@@ -36,6 +36,11 @@
 static Mix_Music *current_music = (Mix_Music *) NULL;
 #endif
 
+#ifdef XMP
+#include "xmp.h"
+static xmp_context context = NULL;
+#endif
+
 sfx_data sounds[NUM_SFX];
 
 static int SAMPLECOUNT = 512;
@@ -245,6 +250,13 @@ void mix_sound(void *unused, Uint8 *stream, int len)
 
 /* misc handling */
 
+#ifdef XMP
+static void xmp_callback(void *dummy, unsigned char *stream, int len)
+{
+	xmp_play_buffer(context, stream, len, 0);
+}
+#endif
+
 char dj_init(void)
 {
 	Uint16 audio_format = MIX_DEFAULT_FORMAT;
@@ -274,6 +286,12 @@ char dj_init(void)
 	Mix_SetMusicCMD(getenv("MUSIC_CMD"));
 
 	Mix_SetPostMix(mix_sound, NULL);
+
+#ifdef XMP
+	context = xmp_create_context();
+	Mix_HookMusic(xmp_callback, NULL);
+#endif
+
 #else
 	main_info.no_sound = 1;
 	return 1;
@@ -288,10 +306,15 @@ void dj_deinit(void)
 		return;
 
 #ifndef NO_SDL_MIXER
+#ifdef XMP
+	xmp_free_context(context);
+	Mix_HookMusic(NULL, NULL);
+#else
 	Mix_HaltMusic();
 	if (current_music)
 		Mix_FreeMusic(current_music);
 	current_music = NULL;
+#endif
 
 	Mix_CloseAudio();
 #endif
@@ -528,13 +551,16 @@ char dj_ready_mod(char mod_num)
 	fclose(tmp);
 #endif
 
+#ifdef XMP
+	xmp_load_module(context, filename);
+#else
 	current_music = Mix_LoadMUS(filename);
-	remove(filename);
-	free(filename);
 	if (current_music == NULL) {
 		fprintf(stderr, "Couldn't load music: %s\n", SDL_GetError());
-		return 0;
 	}
+#endif
+	remove(filename);
+	free(filename);
 
 #endif
 
@@ -547,8 +573,13 @@ char dj_start_mod(void)
 	if (main_info.no_sound)
 		return 0;
 
+#ifdef XMP
+	xmp_set_player(context, XMP_PLAYER_VOLUME, 0);
+	xmp_start_player(context, audio_rate, 0);
+#else
 	Mix_VolumeMusic(0);
 	Mix_PlayMusic(current_music, -1);
+#endif
 #endif
 
 	return 0;
@@ -560,7 +591,13 @@ void dj_stop_mod(void)
 	if (main_info.no_sound)
 		return;
 
+#ifdef XMP
+	xmp_stop_module(context);
+	xmp_end_player(context);
+	xmp_release_module(context);
+#else
 	Mix_HaltMusic();
+#endif
 #endif
 }
 
@@ -570,7 +607,11 @@ void dj_set_mod_volume(char volume)
 	if (main_info.no_sound)
 		return;
 
+#ifdef XMP
+	xmp_set_player(context, XMP_PLAYER_VOLUME, 100 * volume / MIX_MAX_VOLUME);
+#else
 	Mix_VolumeMusic(volume);
+#endif
 #endif
 }
 

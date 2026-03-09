@@ -7,6 +7,7 @@ DATADIR ?= $(PREFIX)/share
 # Can be overridden to use e.g. /usr/share/games
 GAMEDATADIR ?= $(DATADIR)
 EXE ?=
+XMP ?= 0
 
 CFLAGS ?= -Wall -O2 -ffast-math -funroll-loops -fno-common
 SDL_CFLAGS = `sdl2-config --cflags`
@@ -15,6 +16,10 @@ ifeq ($(SYSINSTALL), 1)
 DEFINES += -DGAMEDATADIR="\"$(GAMEDATADIR)\""
 endif
 INCLUDES = -I.
+ifeq ($(XMP), 1)
+SDL_CFLAGS += `pkg-config libxmp --cflags`
+DEFINES += -DXMP
+endif
 CFLAGS += $(DEFINES) $(SDL_CFLAGS) $(INCLUDES)
 export SDL_CFLAGS
 export DEFINES
@@ -22,6 +27,9 @@ export INCLUDES
 
 LDFLAGS ?=
 SDL_LIBS = `sdl2-config --libs`
+ifeq ($(XMP), 1)
+SDL_LIBS += `pkg-config libxmp --libs`
+endif
 LIBS = $(SDL_LIBS) -lSDL2_mixer -lSDL2_net -lbz2 -lz -lm
 
 TARGET = jumpnbump$(EXE)
