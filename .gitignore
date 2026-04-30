@@ -17,3 +17,7 @@ jnbpack
 jnbunpack
 jumpnbump
 sdl.a
+
+
+# cmake
+/build/
