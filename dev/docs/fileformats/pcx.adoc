@@ -1,0 +1,9 @@
+= pcx
+
+
+https://moddingwiki.shikadi.net/wiki/PCX_Format
+
+
+https://moddingwiki.shikadi.net/wiki/RLE_Compression
+
+https://formats.kaitai.io/pcx/

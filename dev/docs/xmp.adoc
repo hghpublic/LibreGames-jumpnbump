@@ -1,0 +1,15 @@
+= xmp
+
+
+https://xmp.sourceforge.net/
+
+https://github.com/libxmp/libxmp
+
+----
+sudo apt install xmp
+----
+
+create `.wav` file::
+----
+xmp bump.mod
+----

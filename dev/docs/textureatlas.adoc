@@ -1,0 +1,12 @@
+= textureatlas
+
+
+
+https://github.com/mobius3/chizu
+
+https://github.com/rxi/atlas
+
+https://github.com/bzeller/atlaspack
+
+
+https://www.codeandweb.com/texturepacker

@@ -1,0 +1,805 @@
+
+<!-- saved from url=(0085)https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm -->
+<html style="--wm-toolbar-height: 67px;"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"><script src="./pcx_files/athena.js" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app222.us.archive.org';v.server_ms=430;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./pcx_files/bundle-playback.js" charset="utf-8"></script>
+<script type="text/javascript" src="./pcx_files/wombat.js" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="./pcx_files/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.nist.fss.ru:80/hr/doc/spec/pcx.htm","20030111010058","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1042246858");
+</script>
+<link rel="stylesheet" type="text/css" href="./pcx_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./pcx_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+
+<title>ZSoft PCX File Format Technical Reference Manual
+</title>
+</head>
+
+<body background="./pcx_files/bg1.jpg" leftmargin="10"><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr; height: 67px;" toolbar-mode="auto"><template shadowrootmode="closed"><div id="wm-ipp" style="position:fixed;left:0;top:0;right:0;">
+<div id="donato" style="position:relative;width:100%;height:0;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="https://archive.org/includes/donate.php?as_page=1&amp;platform=wb&amp;referer=https%3A//web.archive.org/web/20030111010058/http%3A//www.nist.fss.ru/hr/doc/spec/pcx.htm" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><div id="wm-ipp-inside">
+  <div id="wm-toolbar" style="position:relative;display:flex;flex-flow:row nowrap;justify-content:space-between;" nav="async">
+    <div id="wm-logo" style="/*width:110px;*/padding-top:12px;">
+      <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png" srcset="https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-100.png, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-150.png 1.5x, https://web-static.archive.org/_static/images/toolbar/wayback-toolbar-logo-200.png 2x" alt="Wayback Machine" style="width:100px" border="0"></a>
+    </div>
+    <div class="c" style="display:flex;flex-flow:column nowrap;justify-content:space-between;flex:1;">
+      <form class="u" style="display:flex;flex-direction:row;flex-wrap:nowrap;" target="_top" method="get" action="https://web.archive.org/web/submit" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://www.nist.fss.ru/hr/doc/spec/pcx.htm" onfocus="this.focus();this.select();" style="flex:1;" autocomplete="off"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20030111010058"><input type="submit" value="Go">
+      </form>
+      <div style="display:flex;flex-flow:row nowrap;align-items:flex-end;">
+                <div class="s" id="wm-nav-captures" style="flex:1;"><a class="t" href="https://web.archive.org/web/*/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" title="See a list of every capture for this URL">12 captures</a><div class="r" title="Timespan for captures of this URL">24 Feb 2002 - 14 Apr 2005</div></div>
+        <div class="k">
+          <a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" id="wm-graph-anchor">
+            <div id="wm-ipp-sparkline" title="Explore captures for this URL" style="position: relative">
+              <canvas id="wm-sparkline-canvas" width="775" height="27" border="0"></canvas>
+            <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="n">
+      <table>
+        <tbody>
+          <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+          <tr class="m">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20020425150321/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" title="15:03:21 Apr 25, 2002">Apr</a></td>
+            <td class="c" id="displayMonthEl" title="You are here: 01:00:58 Jan 11, 2003">JAN</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20030306114454/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" title="11:44:54 Mar 6, 2003">Mar</a></td>
+          </tr>
+          <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+          <tr class="d">
+            <td class="b" nowrap="nowrap"><a href="https://web.archive.org/web/20020425150321/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" title="15:03:21 Apr 25, 2002"><span class="ta"></span></a></td>
+            <td class="c" id="displayDayEl" style="width:34px;font-size:22px;white-space:nowrap;" title="You are here: 01:00:58 Jan 11, 2003">11</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20030306114454/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" title="11:44:54 Mar 6, 2003"><span class="ta"></span></a></td>
+          </tr>
+          <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+          <tr class="y">
+            <td class="b" nowrap="nowrap">2002</td>
+            <td class="c" id="displayYearEl" title="You are here: 01:00:58 Jan 11, 2003">2003</td>
+            <td class="f" nowrap="nowrap"><a href="https://web.archive.org/web/20040330083548/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" title="08:35:48 Mar 30, 2004">2004</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="r" style="display:flex;flex-flow:column nowrap;align-items:flex-end;justify-content:space-between;">
+      <div id="wm-btns" style="text-align:right;height:23px;">
+                <span class="xxs">
+          <div id="wm-save-snapshot-success">success</div>
+          <div id="wm-save-snapshot-fail">fail</div>
+          <a id="wm-save-snapshot-open" href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#" title="Share via My Web Archive" style="display: none;">
+            <span class="iconochive-web"></span>
+          </a>
+          <a href="https://archive.org/account/login.php" title="Sign In" id="wm-sign-in" style="display: inline-block;">
+            <span class="iconochive-person"></span>
+          </a>
+          <span id="wm-save-snapshot-in-progress" class="iconochive-web" style="display: none;"></span>
+        </span>
+                <a class="xxs" href="https://help.archive.org/help/category/the-wayback-machine/" title="Get some help using the Wayback Machine" style="top:-6px;"><span class="iconochive-question" style="color:rgb(87,186,244);font-size:160%;"></span></a>
+        <a id="wm-tb-close" href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#close" style="top:-2px;" title="Close the toolbar"><span class="iconochive-remove-circle" style="color:#888888;font-size:240%;"></span></a>
+      </div>
+      <div id="wm-share" class="xxs">
+        <a href="https://web.archive.org/web/20030111010058/http://web.archive.org/screenshot/http://www.nist.fss.ru/hr/doc/spec/pcx.htm" id="wm-screenshot" title="screenshot" style="visibility: hidden;">
+          <span class="wm-icon-screen-shot"></span>
+        </a>
+        <a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#" id="wm-video" title="video">
+          <span class="iconochive-movies"></span>
+        </a>
+        <a id="wm-share-facebook" href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#" data-url="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru:80/hr/doc/spec/pcx.htm" title="Share on Facebook" style="margin-right:5px;" target="_blank"><span class="iconochive-facebook" style="color:#3b5998;font-size:160%;"></span></a>
+        <a id="wm-share-twitter" href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#" data-url="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru:80/hr/doc/spec/pcx.htm" title="Share on Twitter" style="margin-right:5px;" target="_blank"><span class="iconochive-twitter" style="color:#1dcaff;font-size:160%;"></span></a>
+      </div>
+      <div style="padding-right:2px;text-align:right;white-space:nowrap;">
+        <a id="wm-expand" class="wm-btn wm-closed" href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#expand"><span id="wm-expand-icon" class="iconochive-down-solid"></span> <span class="xxs" style="font-size:80%;">About this capture</span></a>
+      </div>
+    </div>
+  </div>
+    <div id="wm-capinfo" style="border-top:1px solid #777;display:none; overflow: hidden">
+        <div id="wm-capinfo-notice" source="api"></div>
+                <div id="wm-capinfo-collected-by">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;">COLLECTED BY</div>
+    <div style="padding:3px;position:relative" id="wm-collected-by-content">
+            <div style="display:inline-block;vertical-align:top;width:50%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexacrawls);"></span>
+		Organization: <a style="color:#33f;" href="https://archive.org/details/alexacrawls" target="_new"><span class="wm-title">Alexa Crawls</span></a>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Starting in 1996, <a href="http://www.alexa.com/">Alexa Internet</a> has been donating their crawl data to the Internet Archive.  Flowing in every day, these data are added to the <a href="http://web.archive.org/">Wayback Machine</a> after an embargo period.
+	</div>
+	      </div>
+      <div style="display:inline-block;vertical-align:top;width:49%;">
+			<span class="c-logo" style="background-image:url(https://archive.org/services/img/alexa_do)"></span>
+		<div>Collection: <a style="color:#33f;" href="https://archive.org/details/alexa_do" target="_new"><span class="wm-title">Alexa Crawls DO</span></a></div>
+		<div style="max-height:75px;overflow:hidden;position:relative;">
+	  <div style="position:absolute;top:0;left:0;width:100%;height:75px;background:linear-gradient(to bottom,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 90%,rgba(255,255,255,255) 100%);"></div>
+	  Crawl data donated by Alexa Internet. This data is currently not publicly accessible
+	</div>
+	      </div>
+    </div>
+    </div>
+    <div id="wm-capinfo-timestamps">
+    <div style="background-color:#666;color:#fff;font-weight:bold;text-align:center;padding:2px 0;" title="Timestamps for the elements of this page">TIMESTAMPS</div>
+    <div>
+      <div id="wm-capresources" style="margin:0 5px 5px 5px;max-height:250px;overflow-y:scroll !important"></div>
+      <div id="wm-capresources-loading" style="text-align:left;margin:0 20px 5px 5px;display:none"><img src="https://web-static.archive.org/_static/images/loading.gif" alt="loading"></div>
+    </div>
+    </div>
+  </div></div></div><link rel="stylesheet" type="text/css" href="./pcx_files/banner-styles.css"><link rel="stylesheet" type="text/css" href="./pcx_files/iconochive.css"><div class="wb-autocomplete-suggestions "></div></template>
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20030111010058/http://www.nist.fss.ru:80/hr/doc/spec/pcx.htm</div>
+<script type="text/javascript">//<![CDATA[
+__wm.bt(775,27,25,2,"web","http://www.nist.fss.ru/hr/doc/spec/pcx.htm","20030111010058",1996,"https://web-static.archive.org/_static/",["https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3","https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv"], false);
+  __wm.rw(1);
+//]]></script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+ 
+
+  <a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/index.htm"><img src="./pcx_files/back32.gif" border="0"></a>
+  <!-- SpyLOG v2 f:1211 -->
+<script language="javascript">
+u="u894.56.spylog.com";d=document;nv=navigator;na=nv.appName;p=1;
+bv=Math.round(parseFloat(nv.appVersion)*100);
+n=(na.substring(0,2)=="Mi")?0:1;rn=Math.random();z="p="+p+"&rn="+rn;y="";
+y+="<a href='http://"+u+"/cnt?f=3&p="+p+"&rn="+rn+"' target=_blank>";
+y+="<img src='http://"+u+"/cnt?"+z+
+"&r1="+escape(d.referrer)+"&r="+escape(parent.document.referrer)+
+"&pg="+escape(window.location.href)+"' border=0  width=88 height=31  alt='SpyLOG'>";
+y+="</a>"; d.write(y);if(!n) { d.write("<"+"!--"); }//--></script><a href="https://web.archive.org/web/20030111010058mp_/http://u894.56.spylog.com/cnt?f=3&amp;p=1&amp;rn=0.16887431412894377" target="_blank"><img src="./pcx_files/cnt" border="0" width="88" height="31" alt="SpyLOG"></a><noscript>
+<a href="https://web.archive.org/web/20030111010058/http://u894.56.spylog.com/cnt?f=3&amp;p=1" target="_blank">
+<img src="https://web.archive.org/web/20030111010058im_/http://u894.56.spylog.com/cnt?p=1" alt="SpyLOG" border="0" width="88" height="31">
+</a></noscript><script language="javascript1.2"><!--
+if(!n) { d.write("--"+">"); }//--></script>
+<!-- SpyLOG  -->
+
+
+<hr size="5" noshade="" color="black">
+<table width="100%">
+<tbody><tr>
+  <td witdh="80%"></td>
+  <td rowspan="5" width="20%" valign="center">
+    <h1 align="center">PCX</h1>
+  </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><h2 align="CENTER">PCX FILE FORMAT. <br>Technical Reference Manual
+</h2>
+</td>
+</tr>
+<tr>
+  <td>
+</td>
+</tr>
+<tr>
+  <td><p align="CENTER">
+Copyright © 1985, 1987, 1988, 1990, 1991, ZSoft Corporation
+  </p></td>
+</tr>
+</tbody></table>
+
+<hr size="2" noshade="" color="black">
+
+<h3 align="center">TABLE OF CONTENTS</h3>
+<ul>
+<li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#0">Introduction</a>
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#1">1.</a> Image  File (.PCX) Format
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#2">2.</a> ZSoft .PCX FILE HEADER FORMAT
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#3">3.</a> Decoding .PCX Files
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#4">4.</a> Palette Information Description
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#4-1">4.1.</a> EGA/VGA 16 Color Palette Information
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#4-2">4.2.</a> VGA 256 Color Palette Information
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#4-3">4.3.</a> 24-Bit .PCX Files
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#4-4">4.4.</a> CGA Color Palette Information
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#4-5">4.5.</a> CGA Color Map
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#5">5.</a> PC Paintbrush Bitmap Character Format
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#6">6.</a> Sample "C" Routines
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#7">7.</a> FRIEZE Technical Information
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#7-1">7.1.</a> General FRIEZE Information
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#7-2">7.2.</a> 7.00 and Later FRIEZE
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#7-3">7.3.</a> FRIEZE Function Calls
+</li><li><a href="https://web.archive.org/web/20030111010058/http://www.nist.fss.ru/hr/doc/spec/pcx.htm#7-4">7.4.</a> FRIEZE Error Codes
+</li></ul>
+
+<hr>
+
+<a name="0"></a>
+<h3 align="center">Introduction</h3>
+
+<p>This booklet was designed to aid developers and users in understanding the
+technical aspects of the .PCX file format and the use of FRIEZE.  Any
+comments, questions or suggestions about this booklet should be sent to:
+
+</p><dir>
+ZSoft Corporation
+<br>Technical Services
+<br>ATTN: Code Librarian
+<br>450 Franklin Rd. Suite 100
+<br>Marietta, GA  30067
+</dir>
+
+<p>Technical Reference Manual information compiled by:
+<br>Dean Ansley
+
+</p><p>Revision 5
+
+</p><p>To down load additional information and the source for a complete Turbo
+Pascal program to show .PCX files on a CGA/EGA/VGA graphics display, call our
+BBS at (404)427-1045.  You may use a 9600 baud modem or a 2400 baud standard
+modem.  Your modem should be set for 8 data bits, 1 stop bit, and NO parity.
+
+</p><hr>
+
+<a name="1"></a>
+<h3 align="center">1. Image  File (.PCX) Format</h3>
+
+<p>If you have technical questions on the format, please do not call
+technical support.  ZSoft provides this document as a courtesy to its users
+and developers.  It is not the function of Technical Support to provide
+programming assistance.  If something is not clear, leave a message on our
+BBS, Compuserve, or write us a letter at the above address.
+
+</p><p>The information in this section will be useful if you want to write a
+program to read or write PCX files (images).  If you want to write a special
+case program for one particular image format you should be able to produce
+something that runs twice as fast as "Load from..." in PC Paintbrush.
+
+</p><p>Image files used by PC Paintbrush product family and FRIEZE (those with a
+.PCX extension) begin with a 128 byte header.  Usually you can ignore this
+header, since your images will probably all have the same resolution.  If you
+want to process different resolutions or colors, you will need to interpret
+the header correctly.  The remainder of the image file consists of encoded
+graphic data.  The encoding method is a simple byte oriented run-length
+technique.  We reserve the right to change this method to improve space
+efficiency.  When more than one color plane is stored in the file, each line
+of the image is stored by color plane (generally ordered red, green, blue,
+intensity), As shown below.
+
+</p><pre>Scan line 0:         RRR...        (Plane 0)
+                     GGG...        (Plane 1)
+                     BBB...        (Plane 2)
+                     III...        (Plane 3)
+Scan line 1:         RRR...
+                     GGG...
+                     BBB...
+                     III...        (etc.)
+</pre>
+
+<p>The encoding method is:
+</p><pre>    FOR  each  byte,  X,  read from the file
+        IF the top two bits of X are  1's then
+            count = 6 lowest bits of X
+            data = next byte following X
+        ELSE
+            count = 1
+            data = X
+</pre>
+
+<p>Since the overhead this technique requires is, on average,  25% of
+the non-repeating data and is at least offset whenever bytes are repeated,
+the file storage savings are usually considerable.
+
+<a name="2"></a>
+</p><h3 align="center">2. ZSoft .PCX FILE HEADER FORMAT</h3>
+
+<p>
+<table border="1" bordercolor="black" cellpadding="8" cellspacing="0">
+<tbody><tr><th>Byte</th><th>Item</th><th>Size</th><th>Description/Comments
+</th></tr><tr><td>0</td><td>Manufacturer</td><td>1</td><td>Constant Flag, 10 = ZSoft .pcx
+</td></tr><tr><td>1</td><td>Version</td><td>1</td><td>Version information
+<br>0 = Version 2.5 of PC Paintbrush
+<br>2 = Version 2.8 w/palette information
+<br>3 = Version 2.8 w/o palette information
+<br>4 = PC Paintbrush for Windows(Plus for
+Windows uses Ver 5)
+<br>5 = Version 3.0 and &gt; of PC Paintbrush and PC Paintbrush +, includes
+Publisher's Paintbrush. Includes 24-bit .PCX files
+</td></tr><tr><td>2</td><td>Encoding</td><td>1</td><td>1 = .PCX run length encoding
+</td></tr><tr><td>3</td><td>BitsPerPixel</td><td>1</td><td>Number of bits to represent a pixel
+(per Plane) - 1, 2, 4, or 8
+</td></tr><tr><td>4</td><td>Window</td><td>8</td><td>Image Dimensions: Xmin,Ymin,Xmax,Ymax
+</td></tr><tr><td>12</td><td>HDpi</td><td>2</td><td>Horizontal Resolution of image in DPI<sup>*</sup>
+</td></tr><tr><td>14</td><td>VDpi</td><td>2</td><td>Vertical Resolution of image in DPI<sup>*</sup>
+</td></tr><tr><td>16</td><td>Colormap</td><td>48</td><td>Color palette setting, see text
+</td></tr><tr><td>64</td><td>Reserved</td><td>1</td><td>Should be set to 0.
+</td></tr><tr><td>65</td><td>NPlanes</td><td>1</td><td>Number of color planes
+</td></tr><tr><td>66</td><td>BytesPerLine</td><td>2</td><td>Number of bytes to allocate for a scanline
+plane.  MUST be an EVEN number.  Do NOT calculate from Xmax-Xmin.
+</td></tr><tr><td>68</td><td>PaletteInfo</td><td>2</td><td>How to interpret palette- 1 = Color/BW, 2
+= Grayscale (ignored in PB IV/ IV +)
+</td></tr><tr><td>70</td><td>HscreenSize</td><td>2</td><td>Horizontal screen size in pixels. New
+field found only in PB IV/IV Plus
+</td></tr><tr><td>72</td><td>VscreenSize</td><td>2</td><td>Vertical screen size in pixels. New field
+found only in PB IV/IV Plus
+</td></tr><tr><td>74</td><td>Filler</td><td>54</td><td>Blank to fill out 128 byte header.  Set all
+bytes to 0
+</td></tr><tr><td colspan="4">
+<p><small><b>NOTES:</b>
+</small></p><p><small>All sizes are measured in BYTES.
+</small></p><p><small>All variables of SIZE 2 are integers.
+</small>
+
+</p></td></tr></tbody></table>
+
+</p><dir><dir><hr color="black" width="20%" align="left">
+<small>
+<sup>*</sup> HDpi and VDpi represent the Horizontal and Vertical resolutions
+which the image was created (either printer or scanner); i.e. an image which
+was scanned might have 300 and 300 in each of these fields.
+</small></dir></dir>
+
+<a name="3"></a>
+<h3 align="center">3. Decoding .PCX Files</h3>
+
+<p>First, find the pixel dimensions of the image by calculating [XSIZE = Xmax
+- Xmin + 1] and [YSIZE = Ymax - Ymin + 1].  Then calculate how many bytes are
+required to hold one complete uncompressed scan line:
+
+</p><pre>TotalBytes = NPlanes * BytesPerLine
+</pre>
+
+<p>Note that since there are always an even number of bytes per scan line,
+there will probably be unused data at the end of each scan line.  TotalBytes
+shows how much storage must be available to decode each scan line, including
+any blank area on the right side of the image.  You can now begin decoding
+the first scan line - read the first byte of data from the file.  If the top
+two bits are set, the remaining six bits in the byte show how many times to
+duplicate the next byte in the file.  If the top two bits are not set, the
+first byte is the data itself, with a count of one.
+
+</p><p>Continue decoding the rest of the line.  Keep a running subtotal of how
+many bytes are moved and duplicated into the output buffer.  When the
+subtotal equals TotalBytes, the scan line is complete.  There should always
+be a decoding break at the end of each scan line.  But there will not be a
+decoding break at the end of each plane within each scan line.  When the scan
+line is completed, there may be extra blank data at the end of each plane
+within the scan line.  Use the XSIZE and YSIZE values to find where the valid
+image data is.  If the data is multi-plane, BytesPerLine shows where each
+plane ends within the scan line.
+
+</p><p>Continue decoding the remainder of the scan lines (do not just read to
+end-of-file).  There may be additional data after the end of the image
+(palette, etc.)
+
+<a name="4"></a>
+</p><h3 align="center">4. Palette Information Description</h3>
+
+<a name="4-1"></a>
+<h3>4.1. EGA/VGA 16 Color Palette Information</h3>
+
+<p>In standard RGB format (IBM EGA, IBM VGA) the data is stored as 16
+triples.  Each triple is a 3 byte quantity of Red, Green, Blue values.  The
+values can range from 0-255, so some interpretation may be necessary.  On an
+IBM EGA, for example, there are 4 possible levels of RGB for each color.
+Since 256/4 = 64, the following is a list of the settings and levels:
+
+<table cellpadding="8">
+<tbody><tr><th>Setting</th><th>Level
+</th></tr><tr><td>0-63</td><td>0
+</td></tr><tr><td>64-127</td><td>1
+</td></tr><tr><td>128-192</td><td>2
+</td></tr><tr><td>193-254</td><td>3
+</td></tr></tbody></table>
+
+<a name="4-2"></a>
+</p><h3>4.2. VGA 256 Color Palette Information</h3>
+
+<p>ZSoft has recently added the capability to store palettes containing more
+than 16 colors in the .PCX image file.  The 256 color palette is formatted
+and treated the same as the 16 color palette, except that it is substantially
+longer.  The palette (number of colors x 3 bytes in length) is appended to
+the end of the .PCX file, and is preceded by a 12 decimal.  Since the VGA
+device expects a palette value to be 0-63 instead of 0-255, you need to
+divide the values read in the palette by 4.
+
+</p><p>To access a 256 color palette:
+</p><ul>
+<li>First, check the version number in the header; if it contains a 5 there is
+a palette.
+
+</li><li>Second, read to the end of the file and count back 769 bytes.  The value
+you find should be a 12 decimal, showing the presence of a 256 color palette.
+</li></ul>
+
+<a name="4-3"></a>
+<h3>4.3. 24-Bit .PCX Files</h3>
+
+<p>24 bit images are stored as version 5 or above as 8 bit, 3 plane images.
+
+</p><p>24 bit images do not contain a palette.
+
+</p><p>Bit planes are ordered as lines of red, green, blue in that order.
+
+<a name="4-4"></a>
+</p><h3>4.4. CGA Color Palette Information</h3>
+
+<p><small><b>NOTE:</b> This is no longer supported for PC Paintbrush IV/IV
+Plus.</small>
+
+</p><p>For a standard IBM CGA board, the palette settings are a bit more complex.
+Only the first byte of the triple is used.  The first triple has a valid
+first byte which represents the background color.  To find the background,
+take the (unsigned) byte value and divide by 16.  This will give a result
+between 0-15, hence the background color.  The second triple has a valid
+first byte, which represents the foreground palette.  PC Paintbrush supports
+8 possible CGA palettes, so when the foreground setting is encoded between 0
+and 255, there are 8 ranges of numbers and the divisor is 32.
+
+<a name="4-5"></a>
+</p><h3>4.5. CGA Color Map</h3>
+
+<pre>Header Byte #16
+Background color is determined in the upper four bits.
+Header Byte #19
+</pre>
+
+<p>Only upper 3 bits are used, lower 5 bits are ignored.  The first three bits
+that are used are ordered C, P, I.  These bits are interpreted as follows:
+
+</p><pre>c: color burst enable - 0 = color; 1 = monochrome
+p: palette - 0 = yellow; 1 = white
+i: intensity - 0 = dim; 1 = bright
+</pre>
+
+<a name="5"></a>
+<h3 align="center">5. PC Paintbrush Bitmap Character Format</h3>
+
+<p><small><b>NOTE:</b> This format is for PC Paintbrush (up to Vers 3.7) and
+PC Paintbrush Plus (up to Vers 1.65)</small>
+
+</p><p>The bitmap character fonts are stored in a particularly simple format.  The
+format of these characters is as follows:
+
+</p><pre>Header
+font width         byte          0xA0 + character width  (in pixels)
+font height        byte          character height  (in pixels)
+Character Width Table
+char widths        (256 bytes)   each char's width + 1 pixel of kerning
+Character Images
+(remainder of the file)          starts at char 0  (Null)
+</pre>
+
+<p>The characters are stored in ASCII order and as many as 256 may be
+provided.  Each character is left justified in the character block, all
+characters take up the same number of bytes.
+
+</p><p>Bytes are organized as N strings, where each string is one scan line of
+the character.
+
+</p><p>For example, each character in a 5x7 font requires 7 bytes.  A 9x14 font
+uses 28 bytes per character (stored two bytes per scan line in 14 sets of 2
+byte packets).  Custom fonts may be any size up to the current maximum of 10K
+bytes allowed for a font file.  There is a maximum of 4 bytes per scan line.
+
+<a name="6"></a>
+</p><h3 align="center">6. Sample "C" Routines</h3>
+
+<p>The following is a simple set of C subroutines to read data from a .PCX
+file.
+
+</p><pre>/* This procedure reads one encoded block from the image file and stores a
+count and data byte.
+
+Return result:  0 = valid data stored, EOF = out of data in file */
+
+encget(pbyt, pcnt, fid)
+int *pbyt;        /* where to place data */
+int *pcnt;        /* where to place count */
+FILE *fid;        /* image file handle */
+{
+int i;
+        *pcnt = 1;        /* assume a "run" length of one */
+        if (EOF == (i = getc(fid)))
+                return (EOF);
+        if (0xC0 == (0xC0 &amp; i))
+                {
+                *pcnt = 0x3F &amp; i;
+                if (EOF == (i = getc(fid)))
+                        return (EOF);
+                }
+        *pbyt = i;
+        return (0);
+}
+/* Here's a program fragment using encget.  This reads an entire file and
+stores it in a (large) buffer, pointed to by the variable "bufr". "fp" is
+the file pointer for the image */
+
+int i;
+long l, lsize;
+     lsize = (long )hdr.BytesPerLine * hdr.Nplanes * (1 + hdr.Ymax - hdr.Ymin);
+     for (l = 0; l &lt; lsize; )             /* increment by cnt below */
+                {
+                if (EOF == encget(&amp;chr, &amp;cnt, fp))
+                        break;
+                for (i = 0; i &lt; cnt; i++)
+                        *bufr++ = chr;
+                l += cnt;
+                }
+</pre>
+
+<p>The following is a set of C subroutines to write data to a .PCX file.
+
+</p><pre>/* Subroutine for writing an encoded byte pair (or single byte if it
+doesn't encode) to a file. It returns the count of bytes written, 0 if error */
+
+encput(byt, cnt, fid)
+unsigned char byt, cnt;
+FILE *fid;
+{
+  if (cnt) {
+        if ((cnt == 1) &amp;&amp; (0xC0 != (0xC0 &amp; byt)))
+                {
+                if (EOF == putc((int )byt, fid))
+                        return(0);     /* disk write error (probably full) */
+                return(1);
+                }
+        else
+                {
+                if (EOF == putc((int )0xC0 | cnt, fid))
+                        return (0);      /* disk write error */
+                if (EOF == putc((int )byt, fid))
+                        return (0);      /* disk write error */
+                return (2);
+                }
+        }
+   return (0);
+}
+
+/* This subroutine encodes one scanline and writes it to a file.
+It returns number of bytes written into outBuff, 0 if failed. */
+
+encLine(inBuff, inLen, fp)
+unsigned char *inBuff;    /* pointer to scanline data */
+int inLen;                        /* length of raw scanline in bytes */
+FILE *fp;                        /* file to be written to */
+{
+unsigned char this, last;
+int srcIndex, i;
+register int total;
+register unsigned char runCount;     /* max single runlength is 63 */
+  total = 0;
+  runCount = 1;
+  last = *(inBuff);
+
+/* Find the pixel dimensions of the image by calculating
+[XSIZE = Xmax - Xmin + 1] and [YSIZE = Ymax - Ymin + 1].
+Then calculate how many bytes are in a "run" */
+
+  for (srcIndex = 1; srcIndex &lt; inLen; srcIndex++)
+        {
+        this = *(++inBuff);
+        if (this == last)     /* There is a "run" in the data, encode it */
+                {
+                runCount++;
+                if (runCount == 63)
+                        {
+                        if (! (i = encput(last, runCount, fp)))
+                                return (0);
+                        total += i;
+                        runCount = 0;
+                        }
+                }
+        else                /* No "run"  -  this != last */
+                {
+                if (runCount)
+                        {
+                        if (! (i = encput(last, runCount, fp)))
+                                return(0);
+                        total += i;
+                        }
+                last = this;
+                runCount = 1;
+                }
+        }        /* endloop */
+  if (runCount)        /* finish up */
+        {
+        if (! (i = encput(last, runCount, fp)))
+                return (0);
+        return (total + i);
+        }
+  return (total);
+}
+</pre>
+
+<a name="7"></a>
+<h3 align="center">7. FRIEZE Technical Information</h3>
+
+<a name="7-1"></a>
+<h3>7.1. General FRIEZE Information</h3>
+
+<p>FRIEZE is a memory-resident utility that allows you to capture and save
+graphic images from other programs.  You can then bring these images into PC
+Paintbrush for editing and enhancement.
+
+</p><p>FRIEZE 7.10 and later can be removed from memory (this can return you up
+to 90K of DOS RAM, depending on your configuration). To remove FRIEZE from
+memory, change directories to your paintbrush directory and type the word
+"FRIEZE".
+
+<a name="7-2"></a>
+</p><h3>7.2. 7.00 and Later FRIEZE</h3>
+
+<p>The FRIEZE command line format is:
+
+</p><pre>FRIEZE {PD} {Xn[aarr]} {flags} {video} {hres} {vres} {vnum}
+Where:
+{PD}        Printer driver filename (without the .PDV extension)
+{Xn[aarr]}
+                X=S for Serial Printer, P for Parallel Printer, D for disk file.
+                        (file is always named FRIEZE.PRN)
+                n = port number
+                aa = Two digit hex code for which return bits cause
+                         an abort (optional)
+                rr = Two digit hex code for which return bits cause
+                        a retry (optional)
+</pre>
+
+<p><small><b>NOTE:</b>  These codes represent return values from serial or
+parallel port  BIOS calls.  For values see and IBM BIOS reference (such as
+Ray Duncan's Advanced MS-DOS Programming).</small>
+
+</p><p></p><pre>{flags} Four digit hex code
+        First Digit controls Length Flag
+        Second Digit controls Width Flag
+                Third Digit controls Mode Flag
+                Fourth Digit controls BIOS Flag
+                        0 - None
+                        1 - Dual Monitor Present
+                        2 - Use internal (true) B/W palette for dithering
+                                2 color images
+                        4 - Capture palette along with screen IN VGA ONLY
+                                Frieze 8.08 &amp; up ONLY)
+</pre>
+
+<p><small><b>NOTE:</b> The length, width and mode flags are printer driver
+specific.  See PRINTERS.DAT on disk 1 (or Setup Disk) for correct use.  In
+general width flag of 1 means wide carriage, and 0 means standard width.
+Length flag of 0 and mode flag of 0 means use default printer driver
+settings.</small>
+
+</p><p>If you need to use more than one BIOS flag option, add the needed flag
+values and use the sum as the flag value.
+
+</p><p><table>
+<tbody><tr><td>{video}</td><td>
+Video driver combination, where the leading digit signifies the
+high level video driver and the rest signifies the low
+level video driver
+Example = 1EGA - uses DRIVE1 and EGA.DEV
+</td></tr><tr><td>{hres}</td><td>Horizontal resolution of the desired graphics mode
+</td></tr><tr><td>{vres}</td><td>Vertical resolution of the desired graphics mode
+</td></tr><tr><td>{vnum}</td><td>Hardware specific parameter (usually number of color
+planes)
+</td></tr></tbody></table>
+
+</p><p><small><b>Note:</b> The last four parameters can be obtained from the
+CARDS.DAT file, in your PC Paintbrush product directory.</small>
+
+
+<a name="7-3"></a>
+</p><h3>7.3. FRIEZE Function Calls</h3>
+
+<p>FRIEZE is operated using software interrupt number 10h (the video interrupt
+call).
+
+</p><p>To make a FRIEZE function call, load 75 (decimal) into the  AH register
+and the function number into the CL register, then either load AL with the
+function argument or load ES and BX with a segment and offset which point to
+the function argument. Do an int 10h. FRIEZE will return a result code number
+in AX.  All other registers are preserved.  In general, a result code of 0
+means success and other values indicate errors.  However, function 20 (get
+Frieze Version) behaves differently; see below.
+
+<table border="1" bordercolor="black" cellpadding="8" cellspacing="0">
+<tbody><tr><th>No.</th><th>Definition</th><th>Arguments
+</th></tr><tr><td>0</td><td>Reserved</td><td>&nbsp;
+</td></tr><tr><td>1</td><td>Load Window</td><td>ES:BX - string  (filename to read from)
+</td></tr><tr><td>2</td><td>Save Window</td><td>ES:BX - string  (filename to write to)
+</td></tr><tr><td>3</td><td>Reserved</td><td>&nbsp;
+</td></tr><tr><td>4</td><td>Reserved</td><td>&nbsp;
+</td></tr><tr><td>6</td><td>Reserved</td><td>&nbsp;
+</td></tr><tr><td>7</td><td>Set Window Size</td><td>ES:BX - 4 element word vector of window
+settings:  Xmin, Ymin, Xmax, Ymax
+</td></tr><tr><td>8</td><td>Reserved</td><td>&nbsp;
+</td></tr><tr><td>9</td><td>Set Patterns</td><td> ES:BX - 16 element vector of byte values
+containing the screen-to-printer color correspondence
+</td></tr><tr><td>10</td><td>Get Patterns</td><td>ES:BX - room for 16 bytes as above
+</td></tr><tr><td>11</td><td>Set Mode</td><td>&nbsp;
+</td></tr><tr><td>12</td><td>13,14  Reserved</td><td>&nbsp;
+</td></tr><tr><td>15</td><td>Get Window</td><td> ES:BX - room for 4 words of the current window
+settings
+</td></tr><tr><td>16</td><td>Set Print Options</td><td> ES:BX - character string of printer
+options.  Same format as for the FRIEZE command.
+</td></tr><tr><td>17, 18, 19</td><td>Reserved</td><td>&nbsp;
+</td></tr><tr><td>20</td><td>Get FRIEZE Version.</td><td> AH gets the whole number portion and AL
+gets the decimal portion of the version number.  (eg. for Freize vesion 7.41,
+AH will contain 7 and AL will contain 41.  If AH =0, you are calling a
+pre-7.0 version of FRIEZE).
+</td></tr><tr><td>21</td><td>Set Parameters</td><td> ES:BX points to an 8 word table  (16 bytes)
+of parameter settings: TopMargin, LeftMargin, HSize,VSize, Quality/Draft
+Mode, PrintHres, PrintVres, Reserved.  Margins and sizes are specified in
+hundredths of inches.
+<dir>
+Q/D mode parameter values:
+<ul>
+<li>0 - draft print mode
+</li><li>1 - quality print mode
+</li></ul>
+Print resolutions are specified in DPI.
+</dir>
+Any parameter which should be left unchanged may
+be filled with a (-1) (0FFFF hex).  The reserved
+settings should be filled with a (-1).
+</td></tr><tr><td>22</td><td>Get Parameters</td><td> ES:BX points to an 8 word table (16 bytes)
+where parameter settings are held.
+</td></tr><tr><td>23</td><td>Get Printer Res</td><td> ES:BX points to a 12 word table (24 bytes)
+that holds six printer resolution pairs.
+</td></tr><tr><td>24</td><td>Reserved (versions 8.00 &amp; up)</td><td>&nbsp;
+</td></tr></tbody></table>
+
+<a name="7-4"></a>
+</p><h3>7.4. FRIEZE Error Codes</h3>
+
+<p>When FRIEZE is called using interrupt 10 hex, it will return an error code
+in the AX register.  A value of zero shows that there was no error.  A
+nonzero result means there was an error.  These error codes are explained
+below.
+
+<table border="1" bordercolor="black" cellpadding="8" cellspacing="0">
+<tbody><tr><td>0</td><td>No Error
+</td></tr><tr><td>1</td><td>Printout was stopped by user with the ESC key
+</td></tr><tr><td>2</td><td>Reserved
+</td></tr><tr><td>3</td><td>File read error
+</td></tr><tr><td>4</td><td>File write error
+</td></tr><tr><td>5</td><td>File not found
+</td></tr><tr><td>6</td><td>Invalid Header - not an image, wrong screen mode
+</td></tr><tr><td>7</td><td>File close error
+</td></tr><tr><td>8</td><td>Disk error - usually drive door open
+</td></tr><tr><td>9</td><td>Printer error - printer is off or out of paper
+</td></tr><tr><td>10</td><td>Invalid command - CL was set to call a nonexistent  FRIEZE
+function
+</td></tr><tr><td>11</td><td>Can't create file - write protect tab or disk is full
+</td></tr><tr><td>12</td><td>Wrong video mode - FRIEZE cannot capture text screens.
+</td></tr></tbody></table>
+
+</p><hr>
+<small><i>
+<p><b>Technical Reference Manual</b>
+
+</p><p>Including information for:
+</p><ul>
+<li>Publisher's Paintbrushr
+</li><li>PC Paintbrush IVTM
+</li><li>PC Paintbrush IV PlusTM
+</li><li>PC Paintbrush PlusTM
+</li><li>PC Paintbrushr
+</li><li>FRIEZETM Graphics
+</li><li>PaintbrushTM
+</li><li>Revision 5
+</li></ul>
+
+<p>ZSoft Corporation
+<br>450 Franklin Rd. Suite 100
+<br>Marietta, GA  30067
+<br>(404) 428-0008
+<br>(404) 427-1150 Fax
+<br>(404) 427-1045 BBS
+
+</p></i></small><i></i><p><i><small>Copyright © 1985, 1987, 1988, 1990, 1991, ZSoft Corporation
+<br>All Rights Reserved
+</small></i>
+
+</p><hr>
+
+
+
+
+</body></html>

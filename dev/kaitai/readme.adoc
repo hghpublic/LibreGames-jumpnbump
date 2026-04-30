@@ -1,0 +1,13 @@
+= Kaitai Struct
+
+
+https://kaitai.io/
+
+== Web IDE
+
+https://ide.kaitai.io/
+
+
+== GitHub
+
+https://github.com/kaitai-io/kaitai_struct

@@ -1,0 +1,77 @@
+= MOD Player
+
+http://modarchive.org/
+
+== lxmp
+
+http://sourceforge.net/projects/lxmp
+
+== xmp
+
+https://xmp.sourceforge.net/
+
+https://github.com/libxmp/libxmp
+
+----
+sudo apt install xmp
+----
+
+== MikMod
+
+
+== Milkytracker
+
+https://milkytracker.org/
+
+https://github.com/milkytracker/MilkyTracker
+
+== MODPlug Player
+
+https://modplug-xmms.sourceforge.net/
+
+== SoundTracker
+
+http://www.soundtracker.org/
+
+https://sourceforge.net/projects/soundtracker/
+
+
+== linuxaudio.org
+
+https://linuxaudio.org/
+
+https://wiki.linuxaudio.org/apps/categories/mod_trackers_and_players
+
+
+== ProTrekkr Audio Tracker
+
+https://github.com/hitchhikr/protrekkr
+
+== SMP
+
+`.smp`:: SmartMusic Performance File
+
+MakeMusic SmartMusic
+
+https://www.makemusic.com/
+
+== Strawberry
+
+https://www.strawberrymusicplayer.org/
+
+https://github.com/strawberrymusicplayer/strawberry
+
+== SDL-Mixer-X
+
+https://github.com/WohlSoft/SDL-Mixer-X
+
+https://wohlsoft.github.io/SDL-Mixer-X/SDL_mixer_ext.html
+
+
+== libgme
+
+https://github.com/libgme/game-music-emu
+
+== libxmp
+
+https://github.com/libxmp/libxmp/

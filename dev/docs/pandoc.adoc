@@ -1,0 +1,16 @@
+= pandoc
+
+https://pandoc.org/
+
+
+https://pandoc.org/demos.html
+
+== asciidoc
+
+https://asciidoc.org/
+
+
+----
+pandoc -s MANUAL.txt -t asciidoc -o example28.txt
+pandoc -s example.html -t asciidoc -o example.adoc
+----

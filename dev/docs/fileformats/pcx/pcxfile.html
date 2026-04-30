@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0034)https://www.fysnet.net/pcxfile.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>PCX graphics files explained</title>
+<meta name="AUTHOR" content="Forever Young Software">
+<meta http-equiv="Keywords" content="Undocumented DOS Programming, DOS Help, DOS Source Code, Freeware">
+
+<link type="text/css" rel="stylesheet" href="./pcxfile_files/doc.css">
+<script src="./pcxfile_files/signature.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<h2>PCX graphics files explained</h2>
+
+The PCX graphic file was originally used for the PC-based Paint program.  It was developed<br>
+by Zsoft Corporation.  The last known version was in 1991 but is still used by most all<br>
+DOS graphical programs and still some Windows programs (MS Paint).<br>
+<br>
+The PCX file format can support 24-bit color, either as a palette of up to 256 colors or<br>
+as full, 24-bit RGB, with image sizes of 64k x 64k pixels.  PCX files use Run-Length<br>
+Encoding (RLE).<br>
+<br>
+The PCX file format must contain two parts:  The file header, and the bitmap data.  In the<br>
+later versions, it also contained a palette of up to 256 colors (located at EOF).<br>
+<br>
+The header has a fixed size of 128 bytes.  It contains information about the image contained<br>
+in the PCX file.  For instance; the size, color or grayscale, and also it might contain<br>
+a 48 byte palette.<br>
+<br>
+Next is the bitmap data, or the body of the PCX file.<br>
+<br>
+If the version code (indicated in the header) is 5 and there is a single bit plane, then<br>
+there is a 256-color palette of RGB values at the end of the file and is 768 bytes in<br>
+length.  So to find the palette, find the end of the file, and go back 768 bytes.  The<br>
+byte just before the palette has the value 10 (0Ah)<br>
+<br>
+
+<b>THE HEADER:</b><br>
+<pre class="pretext">Offset  Size    Contents      Meaning
+---------------------------------------------------------------------------------
+  00     01    0Ah (10)      Zsoft ID byte
+  01     01    varies        Version
+                               0 = PC Paintbrush 2.5
+                               2 = PC Paintbrush 2.8 w/palette
+                               3 = PC Paintbrush 2.8 w/out palette
+                               4 = PC Paintbrush for Windows
+                               5 = PC Paintbrush 3.0, IV, IV Plus,
+                                       and Publishers Paintbrush
+  02     01    1             Encoding (PCX run-length encoding)
+  03     01    varies        Bits/pixel (each plane)
+  04     08    varies        Image dimensions Xmin, Ymin, Xmax, Ymax
+  12     02    varies        Horizontal Res.
+  14     02    varies        Vertical Res.
+  16     48    varies        Header palette
+  64     01    00            reserved
+  65     01    varies        number of planes
+  66     02    varies        bytes/line (memory needed for one plane
+                                  of each horiz. line)
+  68     02    01 or 02      Header interpretation
+                               1 = color or B&amp;W
+                               2 = grayscale
+  70     02    varies        Video screen size (Horizontal)
+  72     02    varies        Video screen size (Vertical)
+  74     54    ----blanks to end of header----
+</pre>
+<br>
+Because there can be so many variations of the PCX file format, the version<br>
+can not be an adequate guide.  The most reliable guide to use are the bits/pixel<br>
+and the number of color planes.  The following table describes how to use these<br>
+two fields as the indicator for the type of PCX file.<br>
+<br>
+<b>Interpretation of the PCX data</b><br>
+<pre class="pretext">Bts/pxl   # planes    Interpretation
+---------------------------------------------------------------------------
+    1       1           monochrome
+    1       2           4 colors
+    1       3           8 colors
+    1       4           16 colors
+    2       1           4 colors using CGA header palette*
+    2       4           16 colors
+    4       1           16 colors using EGA header palette*
+    8       1           256 colors using palette at EOF
+    8       3           16.7mil colors
+
+*If version 5, use palette at EOF, not palette in header
+</pre>
+<br>
+<b>If no palette is used:</b><br>
+The data is actual pixel values, RGB.<br>
+It is formatted as RRRRRR...GGGGGG...BBBBBB and so on.<br>
+<br>
+If there are two planes, the colors are arbitrary.  If there are three planes, the colors<br>
+are RGB.  When four planes are used, they are usually the 1-bit planes of the IBM CGA/EGA<br>
+standard:  RGBI (I=intensity).  The intensity bit simply gives a pixel a nominally higher<br>
+brightness.<br>
+<br>
+
+<b>When data are pointers to a palette:</b><br>
+When data are pointers to a palette, each individual data piece points to a position in<br>
+the palette.  The length of each data piece varies.  If it is 16 colors, a 4 bit color,<br>
+then each data piece is a nibble (half a byte).<br>
+<br>
+NOTE:  In the palette-based images, there is only 1 plane.<br>
+<br>
+<b>The 256 color scheme (EOF palette scheme)</b><br>
+Each piece of data (each pixel) takes one byte to represent the offset of the RGB color<br>
+scheme to use.  For example:  If the pixel value is 0 (zero), then go to the front of the<br>
+palette and use the first 3 bytes as the RGB values (respectively).  If the pixel value is<br>
+1, then use the fourth, fifth, and sixth positions as the RGB values (respectively).  etc.<br>
+<br>
+Because the VGA provides only 64 levels of R,G, and B, the palette values must be divided by<br>
+four (shr 2 times) when reading the PCX file for VGA display.<br>
+<br>
+<b>The 16 color scheme (EGA/VGA header palette scheme)</b><br>
+The palette in the header is divided in to three 16 byte sections, one for each R,G, and B<br>
+value.  16 bytes for R, 16 bytes for G, and 16 bytes for B.<br>
+<br>
+<b>The 24 bit color scheme</b><br>
+Each 24-bit color scheme has eight bits/pixel/plane and three-bit planes.<br>
+<br>
+<b>Run Length Encoding (RLE)</b><br>
+In RLE compression, a series of repeated values is replaced by a count and a single value.<br>
+But keep in mind.  If I have a lot of single values (not a series of identical values), then<br>
+this type of compression would double the size of my file.  So rather than use RLE on a series<br>
+of non identical values, just store the values with no count value before it.<br>
+<br>
+This makes a problem though.  How do you tell if a value is a part of a 2 byte 'count-value'<br>
+value, or is that value a direct individual (no count) value to by displayed?  The solution<br>
+is to make each value that is a count value (a value that you will take the next value and<br>
+repeat it) have bits 6 and 7 set.  If bits 6 and 7 are set, then clear them, and take the<br>
+returned value as the count value.  Then take the next value and repeat it count times.  Note:<br>
+Once you have the count value, the pixel value can have a value of 0-255 (bits 6 and 7 can be set).<br>
+<br>
+This makes another problem.  How to display a single value of 192 or higher.  First, you must<br>
+make a count value of 1 (11000001b) then the display value of 192 (or higher) (makes a 2 byte<br>
+entry).<br>
+<br>
+<b>Here is an example of RLE compression:</b><br>
+The data to be encoded: (in byte values)<br>
+-----&gt; 0,10,63,63,63,63,120,34,34,222,222,222,222,1,222,5,10,0,0,0,0,12,12,255<br>
+The encoded data from the above data: (in byte values)<br>
+-----&gt; 0,10,196,63,120,194,34,196,222,1,193,222,5,10,196,0,194,12,193,255<br>
+Notice the un-encoded data is 24 bytes in length, and the encoded data is 20 bytes in<br>
+length.  The more identical values that you get in series, the better compression you get.<br>
+<br>
+NOTE:  If you have a series of identical values that is a length of 64 or more, you must<br>
+make a count-value entry for each 64 length series.  i.e.; You can only have the lo 6 bits<br>
+(bits 0-5) of the count value for the amount to count.  Bits 6 and 7 are marked as a count valued value.<br>
+<br>
+For example:  If you have a series of 0's (zero's) valued pixels with a length of 275, you must<br>
+encode them like so: 255,0,255,0,255,0,255,0,215,0<br>
+Notice that it still cut the length of the data from 275 bytes long to 10 bytes in length.<br>
+A compression percentage of 97%.<br>
+<br>
+<b>Something to think about:</b>  Some RLE Encoding routines use only bit 7 as the count ID bit.<br>
+This way you can have a count of 127 rather than only 63 as shown.  You would think that<br>
+this is more efficient.  It is not.  When you use both the two hi most bits, you can have a <br>
+single display value of up to 191 with out having to have a count-value pair which is two bytes.<br>
+<br>
+Standard PCX files use both the 6th and 7th bits.  If you make your own RLE compressor for your<br>
+own format, then you can pick between the two ways of denoting a count byte (either 1 or 2 bits).<br>
+Each have their advantages.  The single bit denote code allows a lot of identical bytes that are<br>
+in a series to be compressed using little space, but uses more space to display non-identical bytes codes<br>
+(no count codes).  The 2 bit denote code allows a lot of non-identical bytes to be stored on<br>
+little space, but takes up more space to display a series of identical bytes.<br>
+<br>
+If you have any other questions or see a mistake that I made, please e-mail me and I will<br>
+do my best to help out.<br>
+<br>
+Two simple demo programs written in Basic and C to display a 16 color PCX file is included in <br>
+<a href="https://www.fysnet.net/zips/pcxdisp.zip">this</a> ZIP file. (5.8k)<br>
+
+<!-- signature -->
+<script language="JavaScript" type="text/javascript">
+  signature();
+</script>    <br><br>    -----------<br>    All rights reserved<br>    <a href="https://www.fysnet.net/legal.htm" target="_top">Legal Notice</a><br>    Copyright © 1984-2026  Forever Young Software<br>    <a href="https://www.fysnet.net/blog/2018/08/index.html#30aug2018">Want to Donate</a>? <a href="https://www.fysnet.net/osdesign_book_series.htm" target="_top">Buy a book</a> <a href="https://www.fysnet.net/being_a_boy_scout.htm" target="_top">or two</a><br>    <a href="https://www.fysnet.net/index.htm" target="_top">Return to My Home Page</a><br>
+
+
+
+</body></html>
