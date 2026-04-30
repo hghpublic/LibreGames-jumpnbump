@@ -1,0 +1,34 @@
+= Jump 'n Bump v.1.8
+
+https://gitlab.com/LibreGames/jumpnbump
+
+https://github.com/hghpublic/LibreGames-jumpnbump
+
+== Stash
+
+https://aiei.ch/linux/jumpnbump/
+
+Required programs:
+
+Paint Shop Pro - www.jasc.com
+GOBMaker - www.brainchilddesign.com/stuff/gobmaker
+Fast Tracker II - www.starbreeze.com
+Notepad
+
+https://www.mobygames.com/game/16301/jump-n-bump/
+
+https://www.mobygames.com/group/16219/games-with-officially-released-source-code/
+
+https://wiki.debian.org/Games/Jumpnbump
+
+https://salsa.debian.org/games-team/jumpnbump-levels
+
+== YouTube
+
+=== Jump 'n Bump (Dos game 2001)
+
+https://www.youtube.com/watch?v=gtz5NL-C8ug
+
+=== LibRetro Cores: Jump 'n Bump
+
+https://www.youtube.com/watch?v=YHrocZPWiH0
