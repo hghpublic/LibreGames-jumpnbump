@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "bumpnjump",
+  "version": "1.8.0",
+  "dependencies": [
+    "sdl2",
+    "sdl2-mixer",
+    "sdl2-net",
+    "bzip2",
+    "zlib"
+  ]
+}
